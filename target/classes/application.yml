@@ -1,0 +1,56 @@
+spring:
+  mvc:
+    contentnegotiation:
+      favor-parameter: true
+  thymeleaf:
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboottest
+    username: root
+    password: nothing000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      filters: stat,wall
+      aop-patterns: com.example..springboot2.*
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+          enabled: true
+        wall:
+          enabled: true
+  redis:
+    host: 39.101.67.172
+    port: 6379
+    client-type: jedis
+
+#配置 mybatis 规则
+mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml  #全局配置文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml  #mapper映射文件位置
+  configuration:
+    map-underscore-to-camel-case: true
+
+management:
+  endpoints:
+    enabled-by-default: true #暴露所有端点信息
+    web:
+      exposure:
+        include: '*'  #以web方式暴露
+  endpoint:
+    health:
+      show-details: always
+
+formpath: /forms/form_layouts

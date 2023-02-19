@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>Left menu collapsed</title>
+
+    <div th:include="common :: commonhead"></div>
+
+</head>
+
+<body class="sticky-header left-side-collapsed">
+
+<section>
+    <div th:replace="common::#leftmenu"></div>
+
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <div th:replace="common::headermenu"></div>
+        <!-- page heading start-->
+        <div class="page-heading">
+            Page Tittle goes here
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            Body Content goes here
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer class="sticky-footer">
+            Footer contents goes here
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+<script>
+   var ww = $(window).width()
+   $(window).resize(function(){
+       if (ww < 800){
+           $(body).removeClass('left-side-collapsed');
+       }
+
+   });
+</script>
+
+</body>
+</html>

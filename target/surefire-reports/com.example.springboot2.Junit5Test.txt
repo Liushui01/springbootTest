@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.example.springboot2.Junit5Test
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.057 s <<< FAILURE! - in com.example.springboot2.Junit5Test
+wll  Time elapsed: 0.021 s  <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+断言测试 (1 failure)
+	org.opentest4j.AssertionFailedError: 字符串不相等 ==> expected: <123> but was: <13>
+	at com.example.springboot2.Junit5Test.wll(Junit5Test.java:20)
+
+test2  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 业务逻辑计算失败 ==> expected: <4> but was: <5>
+	at com.example.springboot2.Junit5Test.test2(Junit5Test.java:29)
+
