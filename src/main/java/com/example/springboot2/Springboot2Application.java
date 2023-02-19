@@ -11,7 +11,6 @@ public class Springboot2Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Springboot2Application.class, args);
-        System.out.print("111");
     }
 
 }
